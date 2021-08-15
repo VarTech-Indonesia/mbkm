@@ -33,46 +33,45 @@
     <div class="card-header">
         <h3 class="card-title">{{ $title }}</h3>
     </div>
-    <form action="{{ route('user-admin.update', $data->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('user-admin.store') }}" method="post" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
+    @method('POST')
     <div class="card-body">
         <div class="form-group">
             <label for="exampleInputEmail1">Nama Role</label>
             <select id="role_id" class="form-control" name="role_id" style="cursor: pointer" required>
                 @foreach ($role as $role)
-                <option value="{{ $role->id }}" {{ $role->id == $data->role_id ? 'selected' : '' }}>{{$role->name}}</option>
+                <option value="{{ $role->id }}" >{{$role->name}}</option>
                 @endforeach
             </select>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Nama User</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $data->name) }}" required>
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">E-mail</label>
-            <input type="text" class="form-control" id="email" name="email" value="{{ old('email', $data->email) }}" required>
+            <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Password</label>
-            <input type="hidden" name="hidden_password" value="{{ $data->password }}" >
-            <input type="password" name="password" class="form-control" placeholder="Kosongkan jika tidak ada perubahan"  value="{{ old('password') }}">
+            <input type="password" name="password" class="form-control" placeholder="Password"  value="{{ old('password') }}" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Re-Type Password</label>
-            <input type="password" name="password_confirmation" class="form-control" placeholder="Kosongkan jika tidak ada perubahan"" value="{{ old('password_confirmation') }}">
+            <input type="password" name="password_confirmation" class="form-control" placeholder="Password" value="{{ old('password_confirmation') }}" required>
         </div>
         <div class="form-group">
         <label for="exampleInputEmail1">Status</label>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="status" id="status" value="Active" {{ $data->status == 'Active' ? 'checked' : '' }}>
+                    <input class="form-check-input" type="radio" name="status" id="status" value="Active" checked>
                     <label class="form-check-label" for="gridRadios1">
                     Active
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="status" id="status" value="Inactive" {{ $data->status == 'Inactive' ? 'checked' : '' }}>
+                    <input class="form-check-input" type="radio" name="status" id="status" value="Inactive">
                     <label class="form-check-label" for="gridRadios2">
                     Inactive
                     </label>

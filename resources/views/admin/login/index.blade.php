@@ -85,7 +85,7 @@
                     <a href="#">Lupa Password</a>
                 </p>
                 <p class="mb-0">
-                    <!-- <a href="{{route('admin-register-create')}}" class="text-center">Daftar Akun</a> -->
+                    <!-- <a href="{{route('user-admin.create')}}" class="text-center">Daftar Akun</a> -->
                 </p>
             </div>
             <!-- /.card-body -->

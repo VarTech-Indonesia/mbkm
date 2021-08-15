@@ -17,13 +17,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'role_id',
         'name',
         'email',
         'password',
+        'status'
     ];
+    // Relationship to Roles
+    public function role() {
+        return $this->hasOne('App\Models\Role','id','role_id');
+    }
     // Relationship to Post
-    public function belongsToPost()
-    {
+    public function belongsToPost() {
         return $this->belongsTo('App\Models\Post');
     }
     /**

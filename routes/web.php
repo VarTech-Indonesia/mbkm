@@ -5,7 +5,6 @@ use App\Http\Controllers\HomeController;
 // Admin
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminHomeController;
-use App\Http\Controllers\UserAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,22 +33,12 @@ Route::get('/admin', [AuthController::class, 'index'])->name('admin');
 Route::get('/admin/login', [AuthController::class, 'login'])->name('admin-login');
 Route::post('/admin/login-proses', [AuthController::class, 'proses'])->name('admin-login-proses');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::group(['prefix' => 'admin'], function () {
-
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function() {
         // Login and Logout Admin
         Route::get('/home', [AdminHomeController::class, 'index'])->name('admin-home');
         Route::get('/logout', [AuthController::class, 'logout'])->name('admin-logout');
-
-
-        // User
-        Route::get('/user', [UserAdminController::class, 'index'])->name('admin-user');
-        Route::get('/register-create', [AuthController::class, 'create'])->name('admin-register-create');
-        Route::get('/user-edit/{id}', [UserAdminController::class, 'edit']);
-        Route::post('/user-update', [UserAdminController::class, 'update'])->name('admin-user-update');
-        Route::post('/register-store', [AuthController::class, 'store'])->name('admin-register-store');
-
-
+        // User Admin
+        Route::resource('user-admin', UserAdminController::class);
         // Menu Parent
         Route::resource('menu-parent', MenuParentAdminController::class);
         // Menu One Child
@@ -66,5 +55,4 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('slider', SliderController::class);
         // Video
         Route::resource('video', VideoController::class);
-    });
 });
