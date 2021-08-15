@@ -18,44 +18,67 @@
 {{ Session::get('success') }}
 </div>
 @endif
-
-<div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">{{ $title }}</h3>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-12">
+            <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">{{ $title }}</h3>
+            </div>
+            <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Menu Atas</th>
+                        <th>Judul</th>
+                        <th>Status</th>
+                        <th style="width: 40px">
+                        <div class="btn-group btn-group-sm align-center">
+                            <a href="{{ route('page.create') }}" class="btn btn-success">Add</a>
+                        </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($data as $item)
+                    <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$item->menuParents->title}}</td>
+                        <td>{{$item->title}}</td>
+                        <td>{{$item->status}}</td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a href="{{ route('page.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                            </div>
+                        </td>
+                    </tr>
+                    @empty
+                        <div class="alert alert-warning">
+                        Data Belum Tersedia
+                        </div>
+                    @endforelse
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th style="width: 10px">#</th>
+                        <th>Menu Atas</th>
+                        <th>Judul</th>
+                        <th>Status</th>
+                        <th style="width: 40px">
+                        <div class="btn-group btn-group-sm align-center">
+                            <a href="{{ route('page.create') }}" class="btn btn-success">Add</a>
+                        </div>
+                        </th>
+                    </tr>
+                </tfoot>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
     </div>
-    <table class="table table-head-fixed text-nowrap">
-        <thead>
-            <tr>
-                <th style="width: 10px">#</th>
-                <th>Menu Atas</th>
-                <th>Judul</th>
-                <th>Status</th>
-                <th style="width: 40px">
-                <div class="btn-group btn-group-sm align-center">
-                    <a href="{{ route('page.create') }}" class="btn btn-success">Add</a>
-                </div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse ($data as $item)
-            <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$item->menuParents->title}}</td>
-                <td>{{$item->title}}</td>
-                <td>{{$item->status}}</td>
-                <td>
-                    <div class="btn-group btn-group-sm">
-                        <a href="{{ route('page.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                    </div>
-                </td>
-            </tr>
-            @empty
-                <div class="alert alert-warning">
-                Data Belum Tersedia
-                </div>
-            @endforelse
-        </tbody>
-    </table>
-</div>
+</section>
+
 @stop

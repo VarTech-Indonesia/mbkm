@@ -7,6 +7,7 @@
                 <p> Dashboard </p>
             </a>
         </li>
+        @if(auth()->user()->role_id==1)
         <li class="nav-item">
             <a href="{{ route('user-admin.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-user-cog"></i>
@@ -39,6 +40,7 @@
                 </li>
             </ul>
         </li>
+        @endif
         <li class="nav-item">
             <a href="{{ route('page.index') }}" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
