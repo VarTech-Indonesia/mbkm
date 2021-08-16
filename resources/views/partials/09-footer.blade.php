@@ -53,7 +53,7 @@
             <div class="col-12 col-md-12 col-lg-4 ">
                 <div class="footer_main_title py-3"> Info Terbaru</div>
                 @foreach ($info as $item)
-                <a href="{{ $item->link }}" class="footer_img_post_6"><img src="{{ asset('public/storage/'.$item->image) }}" alt="{{ $item->excerpt  }}" /></a>
+                <a href="{{ $item->link_1 }}" class="footer_img_post_6"><img src="{{ asset('public/storage/'.$item->image) }}" alt="{{ $item->excerpt  }}" /></a>
                 @endforeach
             </div>
         </div>
