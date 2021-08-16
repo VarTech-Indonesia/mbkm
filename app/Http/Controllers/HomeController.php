@@ -61,10 +61,10 @@ class HomeController extends Controller
 		$data = [
 			'title' => 'Berita | Merdeka Belajar ITB'
 		];
-		$data['info']				= Post::where('id_category', '2')->where('status', 'Published')->get();
-		$data['berita']				= Post::where('id_category', '1')->where('status', 'Published')->get();
-		$data['video']				= Video::where('status', 'Enable')->get();
-		$data['slider']				= Slider::where('status', 'Published')->get();
+		$data['info']				= Post::where('id_category', '2')->where('status', 'Published')->orderByDesc('updated_at')->get();
+		$data['berita']				= Post::where('id_category', '1')->where('status', 'Published')->orderByDesc('updated_at')->get();
+		$data['video']				= Video::where('status', 'Enable')->orderByDesc('updated_at')->get();
+		$data['slider']				= Slider::where('status', 'Published')->orderByDesc('updated_at')->get();
 
 		$data['menu_kemendikbud']		= MenuOneChildAdmin::where('id_menu_parent', 2)->where('status', 'Enable')->get();
 		$data['menu_sub_kemendikbud']	= Page::where('id_menu_parent', 2)->where('id_menu_one_child', 2)->where('status', 'Published')->get();
