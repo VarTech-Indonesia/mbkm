@@ -68,9 +68,9 @@
                         href="https://merdekabelajar.itb.ac.id" title="merdeka belajar">MBKM ITB</a></div>       
             <div class="col-12 col-md-5 spdp_right py-4">
                 <a href="{{ url('/') }}" class="footer_last_part_menu">Home</a>
-                <a href="/info" class="footer_last_part_menu">Info</a>
-                <a href="/berita" class="footer_last_part_menu">Berita</a>
-                <a href="/video" class="footer_last_part_menu">Video News</a></div>
+                <a href="{{ url('/info') }}" class="footer_last_part_menu">Info</a>
+                <a href="{{ url('/berita') }}" class="footer_last_part_menu">Berita</a>
+                <a href="{{ url('/video') }}" class="footer_last_part_menu">Video News</a></div>
         </div>
     </div>
 </div>
