@@ -13,11 +13,18 @@
                 ?>
                 @foreach ($slider as $item)
                 <div class="carousel-item {{ $active }}">
-                    <img class="d-block w-100" src="{{ asset('public/storage/'.$item->image) }}" alt="{{$item->title}}">
-                </div>
+                    @if ( ($item->link != NULL) OR ($item->link != "") )
+                        <img class="d-block w-100" style="cursor: pointer;" onclick="window.location.href='{{$item->link}}'" src="{{ asset('public/storage/'.$item->image) }}" alt="{{$item->title}}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5><button type="button" class="btn btn-warning btn-sm" onclick="window.location.href='{{$item->link}}'">Info Lebih Lanjut</button></h5>
+                        </div>
+                    @else
+                        <img class="d-block w-100" src="{{ asset('public/storage/'.$item->image) }}" alt="{{$item->title}}">
+                    @endif
                 <?php
                     $active ="";
-                ?>
+                ?>  
+                </div>
                 @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
