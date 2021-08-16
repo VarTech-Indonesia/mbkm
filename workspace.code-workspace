@@ -1,0 +1,8 @@
+{
+	"folders": [
+		{
+			"name": "SSH FS - mbkm",
+			"uri": "ssh://mbkm/var/www/html/merdeka"
+		}
+	]
+}
