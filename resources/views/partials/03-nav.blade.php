@@ -33,6 +33,23 @@
                         <a class="nav-link" href="{{ url('/')}}">BERANDA <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MBKM KEMENDIKBUD</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="https://merdekabelajar.itb.ac.id/page/2/pkkm">PKKM</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/15/pkkm-sbm-itb">PKKM SBM ITB</a></li>
+                                    <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/16/pkkm-sappk-itb">PKKM SAPPK ITB</a></li>
+                                    <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/16/pkkm-sappk-itb">PKKM STEI ITB</a></li>
+                                    <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/18/pkkm-geofisika-itb">PKKM GEOFISIKA ITB</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/3/permata-sakti">Permata Sakti</a></li>
+                            <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/4/bangkit">Bangkit</a></li>
+                            <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/5/matching-fund">Matching Fund</a></li>
+                            <li><a class="dropdown-item" href="https://merdekabelajar.itb.ac.id/page/6/iisma">IISMA</a></li>
+                        </ul>
+                    </li>
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MBKM KEMENDIKBUD</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach ($menu_kemendikbud as $item)
@@ -53,7 +70,7 @@
                             </li>
                             @endforeach
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MBKM ITB</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -66,10 +83,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/berita') }}">Berita</a>
+                        <a class="nav-link" href="{{ url('/berita') }}">BERITA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/info') }}">Info</a>
+                        <a class="nav-link" href="{{ url('/info') }}">INFO</a>
                     </li>
                 </ul>
             </div>

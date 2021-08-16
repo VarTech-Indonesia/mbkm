@@ -31,6 +31,7 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">#</th>
+                        <th style="width: 10px">Id</th>
                         <th>Kategori</th>
                         <th>Judul</th>
                         <th>Status</th>
@@ -45,6 +46,7 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$item->id}}</td>
                         <td>{{$item->postCategories->category}}</td>
                         <td>{{$item->title}}</td>
                         <td>{{$item->status}}</td>
@@ -63,6 +65,7 @@
                 <tfoot>
                     <tr>
                         <th style="width: 10px">#</th>
+                        <th style="width: 10px">Id</th>
                         <th>Kategori</th>
                         <th>Judul</th>
                         <th>Status</th>

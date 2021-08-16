@@ -30,7 +30,8 @@
                 <table id="example2" class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th style="width: 10px">#</th>
+                        <th style="width: 10px">No</th>
+                        <th style="width: 10px">Id</th>
                         <th>Menu Atas</th>
                         <th>Judul</th>
                         <th>Status</th>
@@ -45,6 +46,7 @@
                     @forelse ($data as $item)
                     <tr>
                         <td>{{$loop->iteration}}</td>
+                        <td>{{$item->id}}</td>
                         <td>{{$item->menuParents->title}}</td>
                         <td>{{$item->title}}</td>
                         <td>{{$item->status}}</td>
@@ -63,6 +65,7 @@
                 <tfoot>
                     <tr>
                         <th style="width: 10px">#</th>
+                        <th style="width: 10px">ID</th>
                         <th>Menu Atas</th>
                         <th>Judul</th>
                         <th>Status</th>
