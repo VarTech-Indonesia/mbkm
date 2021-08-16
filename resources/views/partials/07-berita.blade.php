@@ -10,7 +10,7 @@
                 <div class="fh5co_hover_news_img">
                     <div class="fh5co_news_img"><img src="{{ asset('public/storage/'.$item->image) }}" alt="" /></div>
                     <div>
-                        {{-- <div class="c_g"><i class="fa fa-clock-o"></i> Kamis, 10 - Juni - 2021</div> --}}
+                        <div class="c_g"><i class="fa fa-clock-o"></i>&nbsp;{{ date("d-m-Y", strtotime($item->created_at)) }}</div>
                         <a href="{{ $item->link_1 }}" class="d-block fh5co_small_post_heading"><span class="">{!! $item->excerpt !!}</span></a>
                         {{-- <a href="{{ url($item->link) }}pkkmsbmitb" class="text-white"> Read More...</a> --}}
                     </div>

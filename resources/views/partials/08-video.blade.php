@@ -17,7 +17,7 @@
                         <div class="pt-2">
                             <!-- <a href="#" class="d-block fh5co_small_post_heading fh5co_small_post_heading_1">
                                     <span class="">Penyambutan Mahasiswa Baru/Temu Awal Institut Teknologi Bandung TA 2020/2021 </span></a> -->
-                            <div class="c_g"><i class="fa fa-clock-o"></i> {{ $item->tanggal_berita }}</div>
+                            <div class="c_g"><i class="fa fa-clock-o"></i>&nbsp;{{ date("d-m-Y", strtotime($item->tanggal_berita)) }}</div>
                         </div>
                     </div>
                 </div>

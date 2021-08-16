@@ -11,8 +11,8 @@
                     <div class="fh5co_latest_trading_img"><img src="{{ asset('public/storage/'.$item->image) }}" alt="" class="fh5co_img_special_relative" /></div>
                     <div class="fh5co_latest_trading_img_position_absolute"></div>
                     <div class="fh5co_latest_trading_img_position_absolute_1">
-                        <div class="fh5co_latest_trading_date_and_name_color">Senin, 14 - Juni - 2021</div>
                         <div class="fh5co_latest_trading_date_and_name_color">{!! $item->excerpt !!}</div>
+                        <div class="fh5co_latest_trading_date_and_name_color">{{ date("d-m-Y", strtotime($item->created_at)) }}</div>
                         <a href="{{ $item->link_1 }}" class="text-white"> Read More...</a>
                     </div>
                 </div>
